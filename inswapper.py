@@ -275,14 +275,7 @@ class InswapperModel(nn.Module):
                 if name == "initializers":
                     continue
 
-                if hasattr(self, name):
-                    own_module = getattr(self, name)
-                    # clone weights
-                    if hasattr(own_module, "weight"):
-                        own_module.weight.copy_(getattr(model, name).weight)
-                    if hasattr(own_module, "bias"):
-                        own_module.bias.copy_(getattr(model, name).bias)
-                elif name in ONNX_TO_ENCODER:
+                if name in ONNX_TO_ENCODER:
                     own_module = getattr(self.encoder, ONNX_TO_ENCODER[name])
                     if hasattr(own_module, "weight"):
                         own_module.weight.copy_(getattr(model, name).weight)
