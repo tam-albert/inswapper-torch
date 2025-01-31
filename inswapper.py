@@ -294,8 +294,6 @@ class InswapperModel(nn.Module):
                         own_module.weight.copy_(getattr(model, name).weight)
                     if hasattr(own_module, "bias"):
                         own_module.bias.copy_(getattr(model, name).bias)
-                else:
-                    setattr(self, name, module)
 
     def forward(self, target_image, source_face):
         # encoder
