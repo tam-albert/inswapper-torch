@@ -257,8 +257,7 @@ class InswapperModel(nn.Module):
 
         self.decoder = InswapperDecoder()
 
-        self.ada_instance_norm = AdaptiveInstanceNorm()
-
+        # load weights if ONNX checkpoint is provided
         if onnx_checkpoint is not None:
             self._load_from_onnx_checkpoint(onnx_checkpoint)
 
