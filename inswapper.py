@@ -1,6 +1,6 @@
 import torch
-from torch import nn
 import torch.nn.functional as F
+from torch import nn
 
 ONNX_TO_ENCODER = {
     "Conv_40": "conv1",

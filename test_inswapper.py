@@ -1,6 +1,7 @@
 import argparse
-import onnxruntime
+
 import numpy as np
+import onnxruntime
 import torch
 from onnx2torch import convert
 
