@@ -59,7 +59,7 @@ class AdaptiveInstanceNorm(nn.Module):
 
         if condition.size(1) != 2 * C:
             raise ValueError(
-                f"AdaptiveInstanceNorm requires inputs of shape x = (B, C, H, W) and condition = (B, 2 * C), but 2 * {x.size(1)} does not match {cond.size(1)}."
+                f"AdaptiveInstanceNorm requires inputs of shape x = (B, C, H, W) and condition = (B, 2 * C), but 2 * {x.size(1)} does not match {condition.size(1)}."
             )
 
         mean = x.mean(dim=(2, 3), keepdim=True)
